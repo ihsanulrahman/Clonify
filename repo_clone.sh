@@ -154,21 +154,16 @@ echo -e "${WHITE}Initializing repository cloning...${END}"
 echo ""
 
 # Common DT
-print_section "COMMON DEVICE TREE"
-clone_repo "https://github.com/ihsanulrahman/device_xiaomi_sm6250-common" \
-           "device/xiaomi/sm6250-common" \
-           "16-volt" \
+print_section "HARDWARE XIAOMI"
+clone_repo "https://github.com/frost-testzone/hardware_xiaomi" \
+           "hardware/xiaomi" \
+           "16" \
            "0"
 
 # Vendor Sources
 print_section "VENDOR REPOSITORIES"
 clone_repo "https://github.com/ihsanulrahman/vendor_xiaomi_miatoll" \
            "vendor/xiaomi/miatoll" \
-           "16" \
-           "1"
-
-clone_repo "https://github.com/ihsanulrahman/vendor_xiaomi_sm6250-common" \
-           "vendor/xiaomi/sm6250-common" \
            "16" \
            "1"
 
@@ -197,7 +192,7 @@ clone_repo "https://github.com/ihsanulrahman/vendor_xiaomi_miuicamera-miatoll" \
 
 clone_repo "https://github.com/ihsanulrahman/device_xiaomi_miatoll" \
            "device/xiaomi/miatoll" \
-           "16-volt" \
+           "16" \
            "0"
 
 # Summary
@@ -221,9 +216,8 @@ check_repo() {
     fi
 }
 
-check_repo "device/xiaomi/sm6250-common" "Common Device Tree"
+check_repo "hardware_xiaomi" "Xardware Xiaomi"
 check_repo "vendor/xiaomi/miatoll" "Vendor Miatoll"
-check_repo "vendor/xiaomi/sm6250-common" "Vendor Common"
 check_repo "kernel/xiaomi/sm6250" "Kernel"
 check_repo "hardware/sony/timekeep" "Timekeep Hardware"
 check_repo "vendor/xiaomi/miuicamera-miatoll" "MIUI Camera"
